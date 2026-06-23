@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Of Ink. — Links</title>
+  <meta name="description" content="Skin Of Ink — Tattoo Studio. Book your session, browse the portfolio, and follow our work." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Skin Of Ink. — Tattoo Studio" />
+  <meta property="og:description" content="Book your session, browse the portfolio, and follow our work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0d0d0d;
+      --card: #0d0d0d;
+      --card-text: #ffffff;
+      --muted: #6a6a6a;
+      --line: #e4e4e4;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 56px 20px 80px;
+      line-height: 1.4;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ---------- Back link ---------- */
+    .back {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: .5px;
+      margin-bottom: 24px;
+      transition: color .15s ease;
+    }
+    .back:hover { color: var(--text); }
+    .back svg { width: 16px; height: 16px; }
+
+    /* ---------- Logo ---------- */
+    .avatar {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 14px;
+    }
+    .logo {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(54px, 14vw, 92px);
+      letter-spacing: -1px;
+      line-height: 0.9;
+      text-transform: uppercase;
+      position: relative;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15.5px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .bio {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* ---------- Links ---------- */
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 17px 22px;
+      background: var(--card);
+      color: var(--card-text);
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15.5px;
+      letter-spacing: .3px;
+      border: 2px solid var(--card);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+      position: relative;
+    }
+    .link .ico {
+      width: 22px;
+      flex: 0 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .link .label { flex: 1; text-align: center; }
+    .link .ico svg { width: 20px; height: 20px; }
+
+    .link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+    /* outline variant for secondary links */
+    .link.outline {
+      background: transparent;
+      color: var(--text);
+      border-color: #cfcfcf;
+    }
+    .link.outline:hover {
+      background: var(--card);
+      color: var(--card-text);
+      border-color: var(--card);
+    }
+
+    /* ---------- Socials ---------- */
+    .socials {
+      display: flex;
+      gap: 22px;
+      margin-top: 38px;
+    }
+    .socials a {
+      color: var(--muted);
+      transition: color .15s ease, transform .15s ease;
+      display: inline-flex;
+    }
+    .socials a:hover { color: var(--text); transform: translateY(-2px); }
+    .socials svg { width: 24px; height: 24px; }
+
+    footer {
+      margin-top: 40px;
+      color: #9a9a9a;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    footer a { color: #6a6a6a; text-decoration: none; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 600px) {
+      body { padding: 40px 16px 64px; }
+      .link { padding: 16px 18px; font-size: 15px; }
+      .socials { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to site
+    </a>
+
+    <!-- Logo lives in this folder as "logo.jpg"; the text wordmark shows if it's missing -->
+    <img class="avatar" src="logo.jpg" alt="Skin Of Ink."
+         onerror="this.outerHTML='&lt;h1 class=&quot;logo&quot;&gt;Skin Of Ink&lt;span&gt;.&lt;/span&gt;&lt;/h1&gt;'" />
+    <p class="subtitle">Private Tattoo Studio &middot; Colchester, Essex</p>
+    <p class="bio">💜 Bringing the good vibes ✨ Book now</p>
+
+    <nav class="links">
+      <a class="link" href="https://www.instagram.com/hollygee_skinofink" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </span>
+        <span class="label">Instagram - Holly | Artist &amp; Owner</span>
+      </a>
+
+      <a class="link" href="https://www.instagram.com/skinofink.uk" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </span>
+        <span class="label">Instagram | Private Studio</span>
+      </a>
+
+      <a class="link" href="https://www.tiktok.com/@hollygee_skinofink" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3a5.6 5.6 0 0 0 4.5 4.5v3a8.6 8.6 0 0 1-4.5-1.3v6.3a6 6 0 1 1-6-6c.34 0 .67.03 1 .08v3.1a3 3 0 1 0 2 2.82V3h3z"/></svg>
+        </span>
+        <span class="label">Tik Tok | Skin Of Ink</span>
+      </a>
+
+      <a class="link" href="https://www.facebook.com/hollygeetattoo" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </span>
+        <span class="label">Facebook</span>
+      </a>
+
+      <a class="link" href="https://getink.app/artists/hollygee_skinofink" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        <span class="label">Get Ink - Bookings/Enquiries</span>
+      </a>
+
+      <a class="link" href="https://g.page/r/Cb4L6gWc4O2NEAE/review" target="_blank" rel="noopener">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </span>
+        <span class="label">Google Reviews</span>
+      </a>
+    </nav>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/skinofink.uk" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=447943209475" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.46 15.05L2 22l5.07-1.33A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 0 1 6.86 12.4l-.2.32.84 3.07-3.15-.83-.3.18a8.1 8.1 0 1 1-4.05-15.1zM8.6 6.9c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.2.87 2.35.99 2.51.12.16 1.7 2.6 4.15 3.64.58.25 1.03.4 1.39.51.58.18 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.2-1.42-1.34-1.66-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/hollygeetattoo" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@hollygee_skinofink" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3a5.6 5.6 0 0 0 4.5 4.5v3a8.6 8.6 0 0 1-4.5-1.3v6.3a6 6 0 1 1-6-6c.34 0 .67.03 1 .08v3.1a3 3 0 1 0 2 2.82V3h3z"/></svg>
+      </a>
+    </div>
+
+    <footer>
+      &copy; <span id="year">2026</span> Skin Of Ink. &middot; <a href="#">Privacy</a>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

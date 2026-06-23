@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Of Ink. — Tattoo Studio</title>
+  <meta name="description" content="Skin Of Ink — Tattoo Studio. Browse our links and get in touch." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Skin Of Ink. — Tattoo Studio" />
+  <meta property="og:description" content="Book your session, browse the portfolio, and follow our work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f5f5f5;
+      --text: #0d0d0d;
+      --card: #0d0d0d;
+      --card-text: #ffffff;
+      --muted: #6a6a6a;
+      --line: #e4e4e4;
+      --radius: 14px;
+      --maxw: 1040px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+    a { color: inherit; }
+
+    .section-title {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      font-size: clamp(26px, 5vw, 40px);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    /* ---------- Header / nav ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      letter-spacing: .5px;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .15s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    @media (max-width: 620px) { .nav-links { display: none; } }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 64px);   /* fill viewport minus the sticky header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px 0;
+    }
+    .hero-logo-wrap {
+      position: relative;
+      display: block;
+      width: min(1040px, 84vw);
+      line-height: 0;
+    }
+    .hero-logo {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .book-cta {
+      margin-top: 34px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
+      padding: 16px 36px;
+    }
+    /* ---------- Scroll cue ---------- */
+    .scroll-cue {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      color: var(--muted);
+      display: inline-flex;
+      padding: 6px;
+      transition: color .15s ease;
+      animation: bob 1.6s ease-in-out infinite;
+    }
+    .scroll-cue:hover { color: var(--text); }
+    .scroll-cue svg { width: 30px; height: 30px; }
+    @keyframes bob {
+      0%, 100% { transform: translate(-50%, 0); }
+      50%      { transform: translate(-50%, 9px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-cue { animation: none; transform: translateX(-50%); }
+    }
+    .tagline {
+      position: absolute;
+      top: 81%;            /* clear gap below the brush-line (~74%) */
+      left: 0;
+      right: 0;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2.1vw, 32px);
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 26px;
+      background: var(--card);
+      color: var(--card-text);
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: .3px;
+      border: 2px solid var(--card);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    }
+    .btn svg { width: 18px; height: 18px; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+    .btn.outline {
+      background: transparent;
+      color: var(--text);
+      border-color: #cfcfcf;
+    }
+    .btn.outline:hover { background: var(--card); color: var(--card-text); border-color: var(--card); }
+
+    /* ---------- Generic section spacing ---------- */
+    section { padding: 70px 0; }
+
+    /* ---------- Contact ---------- */
+    .contact { background: var(--bg-soft); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+    .info-block { margin-bottom: 26px; }
+    .info-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .info-label svg { width: 16px; height: 16px; }
+    .info-value { font-size: 17px; font-weight: 500; }
+    .info-value a { text-decoration: none; }
+    .info-value a:hover { text-decoration: underline; }
+    .hours-list { list-style: none; font-size: 15px; color: #2a2a2a; }
+    .hours-list li { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--line); }
+    .hours-list li span:last-child { color: var(--muted); }
+
+    .map-wrap { display: flex; flex-direction: column; gap: 14px; }
+    .map {
+      width: 100%;
+      min-height: 300px;
+      flex: 1;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      filter: grayscale(1) contrast(1.05);
+    }
+    .map-btn { align-self: flex-start; }
+
+    /* ---------- Socials ---------- */
+    .socials {
+      display: flex;
+      gap: 22px;
+      margin-top: 26px;
+    }
+    .socials a {
+      color: var(--muted);
+      transition: color .15s ease, transform .15s ease;
+      display: inline-flex;
+    }
+    .socials a:hover { color: var(--text); transform: translateY(-3px); }
+    .socials svg { width: 26px; height: 26px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: #9a9a9a;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    footer a { color: #6a6a6a; text-decoration: none; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .hero { padding: 40px 0; }
+      .tagline { letter-spacing: 4px; }
+      section { padding: 48px 0; }
+      .section-sub { margin-bottom: 26px; }
+
+      .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+      .map { min-height: 220px; }
+      .info-value { font-size: 16px; }
+      .socials { gap: 20px; justify-content: flex-start; }
+    }
+
+    /* Larger touch targets on touch devices */
+    @media (hover: none) {
+      .nav-links a, .info-value a { padding: 2px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Skin Of Ink.</a>
+      <nav class="nav-links">
+        <a href="#contact">Contact</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main id="top">
+    <div class="container hero">
+      <div class="hero-logo-wrap">
+        <img class="hero-logo" src="logo.jpg" alt="Skin Of Ink." />
+        <p class="tagline">Tattoo Studio</p>
+      </div>
+      <a class="btn book-cta" href="https://getink.app/artists/hollygee_skinofink" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Make a Booking
+      </a>
+
+      <a class="scroll-cue" href="#contact" aria-label="Scroll to contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+    </div>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Contact</h2>
+        <p class="section-sub">By appointment only</p>
+
+        <div class="contact-grid">
+          <!-- Left: details -->
+          <div>
+            <div class="info-block">
+              <div class="info-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Studio Address
+              </div>
+              <div class="info-value">
+                Unit 3b, Kingsford Business Centre<br />
+                Layer Rd, Colchester<br />
+                CO2 0HT
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </div>
+              <div class="info-value"><a href="mailto:hello@skinofink.com">hello@skinofink.com</a></div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Phone
+              </div>
+              <div class="info-value"><a href="tel:+447943209475">07943 209475</a></div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Opening Hours
+              </div>
+              <!-- TODO: confirm full weekly hours — Google only showed "Opens 10am Wed" -->
+              <ul class="hours-list">
+                <li><span>Wed – Sat</span><span>10:00 – 18:00</span></li>
+                <li><span>Sun – Tue</span><span>Closed</span></li>
+              </ul>
+            </div>
+
+            <!-- Social icons -->
+            <div class="socials">
+              <a href="https://www.instagram.com/skinofink.uk" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@hollygee_skinofink" target="_blank" rel="noopener" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3a5.6 5.6 0 0 0 4.5 4.5v3a8.6 8.6 0 0 1-4.5-1.3v6.3a6 6 0 1 1-6-6c.34 0 .67.03 1 .08v3.1a3 3 0 1 0 2 2.82V3h3z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/hollygeetattoo" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="mailto:hello@skinofink.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: map -->
+          <div class="map-wrap">
+            <iframe
+              class="map"
+              title="Skin Of Ink — Unit 3b, Kingsford Business Centre, Layer Rd, Colchester CO2 0HT"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=VV39%2BJG%20Colchester&t=&z=16&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+            <a class="btn outline map-btn" href="https://www.google.com/maps/search/?api=1&query=VV39%2BJG%20Colchester" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    &copy; <span id="year">2026</span> Skin Of Ink. &middot; <a href="links.html">Links</a> &middot; <a href="#">Privacy</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
