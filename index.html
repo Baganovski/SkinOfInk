@@ -37,6 +37,7 @@
       color: var(--text);
       background: var(--bg);
       min-height: 100vh;
+      min-height: 100dvh;
       line-height: 1.5;
     }
 
@@ -97,7 +98,8 @@
     /* ---------- Hero ---------- */
     .hero {
       position: relative;
-      min-height: calc(100vh - 64px);   /* fill viewport minus the sticky header */
+      min-height: calc(100vh - 64px);    /* fallback for older browsers */
+      min-height: calc(100dvh - 64px);   /* dynamic vh tracks the mobile browser bar */
       display: flex;
       flex-direction: column;
       align-items: center;
