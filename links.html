@@ -253,6 +253,38 @@
       .link { padding: 16px 18px; font-size: 15px; }
       .socials { gap: 20px; }
     }
+
+    /* Fit everything in one viewport, no scrolling — desktop and mobile alike.
+       Spacing scales with the dynamic viewport height so it stays within the
+       visible area (browser chrome included) across screen sizes.
+       Only applies when the viewport is at least 600px tall; anything shorter
+       (e.g. a phone rotated to landscape) falls back to normal scrolling. */
+    @media (min-height: 600px) {
+      body {
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        padding: clamp(12px, 2.4dvh, 40px) 20px clamp(12px, 2dvh, 40px);
+      }
+      .wrap {
+        height: 100%;
+        justify-content: center;
+      }
+      .back { margin-bottom: clamp(6px, 1.6dvh, 24px); }
+      .avatar {
+        width: auto;
+        max-width: min(380px, 80%);
+        max-height: clamp(70px, 18dvh, 180px);
+        margin-bottom: clamp(4px, 1.2dvh, 14px);
+      }
+      .subtitle { font-size: clamp(13px, 1.8dvh, 15.5px); margin-bottom: clamp(2px, .6dvh, 5px); }
+      .bio { font-size: clamp(12.5px, 1.7dvh, 14px); margin-bottom: clamp(8px, 2.2dvh, 30px); }
+      .links { gap: clamp(7px, 1.4dvh, 14px); }
+      .link { padding: clamp(10px, 1.7dvh, 17px) 18px; }
+      .socials { margin-top: clamp(10px, 2.4dvh, 38px); }
+      .socials svg { width: clamp(20px, 2.6dvh, 24px); height: clamp(20px, 2.6dvh, 24px); }
+      footer { margin-top: clamp(10px, 2.2dvh, 40px); }
+    }
   </style>
 </head>
 <body>
